@@ -49,6 +49,10 @@ def generate_plan_from_text(user_text: str, api_key: str, current_tasks: list = 
             2. NO DATE MENTIONED AT ALL (e.g., "ไม่ไปไหนแล้ว", "ไปกินข้าวตอนเที่ยง"):
                - ONLY in this specific case, use the [📱 USER'S UI VIEWING DATE: {target_date}].
 
+            3. DATE RANGES / MULTIPLE DAYS (e.g., "วันนี้ถึงวันที่ 29", "ไปเที่ยว 3 วัน"):
+               - You MUST generate a SEPARATE object in the array for EACH INDIVIDUAL DAY in the range.
+               - DO NOT output a range like "2026-08-25 to 2026-08-29". It MUST be split into multiple objects with exact YYYY-MM-DD dates.
+
             [CRITICAL RULES FOR TASKS AND LOCATIONS]
             1. CANCELLATIONS ("ไม่ไปไหน", "อยู่บ้าน", "ยกเลิก"):
                - If the user says they are not going anywhere (e.g., "ไม่ไปไหน"), you MUST ONLY delete TASKS.
@@ -62,9 +66,10 @@ def generate_plan_from_text(user_text: str, api_key: str, current_tasks: list = 
 
             [CRITICAL JSON FORMATTING RULES]
             1. You MUST include a "reasoning" key FIRST to explain your logic.
-            2. Return EXACTLY 6 root keys in the exact order shown below (reasoning, reply_message, deleted_tasks, deleted_locations, tasks, locations).
+            2. Return EXACTLY 6 root keys in the exact order shown below.
             3. If there is no data for a specific array, return [].
-            4. DO NOT wrap your response in markdown blocks. Output RAW JSON only.
+            4. YOUR RESPONSE MUST START EXACTLY WITH `{{` AND END EXACTLY WITH `}}`. 
+            5. DO NOT ADD ANY MARKDOWN FORMATTING OR CONVERSATIONAL TEXT (NO ````json).
 
             EXPECTED JSON SCHEMA:
             {{
