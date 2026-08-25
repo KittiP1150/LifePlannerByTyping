@@ -25,3 +25,7 @@ An AI Life Planner application that automatically organizes your daily tasks and
 ```bash
 docker-compose up -d --build
 ```
+Example
+<img src="./photo/1.jpg" width="500">
+<img src="./photo/2.jpg" width="500">
+<img src="./photo/3.jpg" width="500">
