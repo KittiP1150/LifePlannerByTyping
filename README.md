@@ -11,9 +11,6 @@ An AI Life Planner application that automatically organizes your daily tasks and
 * **AI Engine:** Groq API (LLM)
 
 ## 🛠️ Prerequisites (สิ่งที่ต้องมีในเครื่อง)
-ก่อนเริ่มรันโปรเจกต์ กรุณาตรวจสอบให้แน่ใจว่าเครื่องของคุณมีเครื่องมือเหล่านี้:
-* [Node.js](https://nodejs.org/)
-* [Python 3.8+](https://www.python.org/)
 * **Groq API Key** (สามารถสมัครฟรีได้ที่ [console.groq.com](https://console.groq.com/))
 
 ---
