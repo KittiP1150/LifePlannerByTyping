@@ -10,12 +10,13 @@ services:
       MYSQL_DATABASE: intelliplan_db
     ports:
       - "3306:3306"
-      
+
   backend-api:
     build: 
       context: ./plan-api-service
     ports:
       - "8000:8000"
+    restart: always
     depends_on:
       - db
   
