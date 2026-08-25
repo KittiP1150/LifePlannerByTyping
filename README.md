@@ -21,11 +21,10 @@ An AI Life Planner application that automatically organizes your daily tasks and
 ## 🏃‍♂️ How to Run (วิธีรันโปรเจกต์)
 * รันผ่าน docker
 ### Prerequisites
-*ตรวจสอบให้แน่ใจว่าติดตั้ง [Docker](https://www.docker.com/) และ **Docker Compose** ในเครื่องแล้ว
+* ตรวจสอบให้แน่ใจว่าติดตั้ง [Docker](https://www.docker.com/) และ **Docker Compose** ในเครื่องแล้ว
 
 เปิด Terminal ในโฟลเดอร์โปรเจกต์หลัก แล้วรันคำสั่ง:
 
 ```bash
-# สร้าง Image และรัน Container เบื้องหลัง
 docker-compose up -d --build
 ```
